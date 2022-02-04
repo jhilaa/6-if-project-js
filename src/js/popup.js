@@ -7,9 +7,10 @@ function addItem(task, description) {
   let newTask = taskModel[0].cloneNode(true);
   newTask.querySelector(".item-author").textContent = task;
   newTask.querySelector(".item-except").textContent = description;
-  newTask.className = "list-item";
-  newTask.style.display = "block";
-  console.log(newTask.querySelector(".btnDeleteTask"));
+  newTask.classList.add("list-item");
+  newTask.classList.add("list-item-model");
+  newTask.style.display = "flex";
+  //console.log(newTask.querySelector(".btnDeleteTask"));
   newTask.querySelector(".btnDeleteTask").addEventListener("click", (e) => {
     e.target.closest(".list-item").remove();
     storeDataTasks();
