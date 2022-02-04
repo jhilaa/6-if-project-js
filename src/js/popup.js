@@ -20,8 +20,6 @@ function addItem(task, description) {
 
 function storeDataTasks() {
   let taskElements = Array.from(document.getElementsByClassName("list-item"));
-  console.log("0000000000");
-  console.log(taskElements);
   tasks = taskElements.map((taskElement) => {
     let task = taskElement.getElementsByClassName("item-author")[0];
     let description = taskElement.getElementsByClassName("item-except")[0];
@@ -47,12 +45,16 @@ function getDataTasks() {
   });
 }
 
+function cleanInput() {
+  inputTask.value = "";
+  inputDescription.value = "";
+}
 //---------------------------
 // init de la liste des tâches à partir de ce qu'il y  dans le storage
 getDataTasks();
 
 btnAddTask.addEventListener("click", () => {
-  console.log("1");
   addItem(inputTask.value, inputDescription.value);
   storeDataTasks();
+  cleanInput();
 });

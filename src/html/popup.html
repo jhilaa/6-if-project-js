@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="popup.css" />
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/window.css" rel="stylesheet">
   </head>
   <body>
     <!--
@@ -19,41 +20,30 @@
       <div class="padding">
         <div class="row">
           <div class="col-sm-8">
-            <!----------->
-            <!----------------->
             <div id="container" class="container-fluid d-flex justify-content-center">
               <div
-                class="list list-row card"
+                class="list list-row"
                 id="sortable"
                 data-sortable-id="0"
                 aria-dropeffect="move"
               >
                 <!-- MODELE ---------------------->
                 <div
-                  class="list-item-model"
+                  class="list-item-model tile-red"
                   draggable="true"
                   role="option"
                   aria-grabbed="false"
                   style="display: none;"
                 >
-                  <div>
-                    <a href="#" data-abc="true"
-                      ><span class="w-40 avatar gd-primary"></span></a
-                    >
-                  </div>
-                  <div class="flex">
-                    <a href="#" class="item-author text-color" data-abc="true"
-                      >*</a
-                    >
-                    <div class="item-except text-muted text-sm h-1x">
+                  <div class="tile-header" style="background-color: aquamarine;">
+                    <h3 class="item-author text-color" data-abc="true"
+                      >*</h3>
+                    <h3 class="item-except text-muted text-sm h-1x">
                       *
-                    </div>
-                  </div>
-                  <div>
+                    </h3>
                     <a href="#" data-abc="true"
                       ><span class="w-50 avatar gd-primary btnDeleteTask">Delete</span></a
                     >
-                  </div>
                 </div>
                 <!----------------------->
               </div>
@@ -66,6 +56,8 @@
     <input id="inputDescription" type="text" placeholder="description"></input>
     <input id="btnAddTask" type="button"> Valider </input>
     <!--------------------------->
-    <script src="popup.js"></script>
+    <script src="../lib/jquery-2.0.3.min.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
