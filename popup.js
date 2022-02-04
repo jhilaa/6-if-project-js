@@ -1,23 +1,27 @@
 let container = document.getElementById("sortable");
-let taskModel = document.getElementById("taskModel");
+let taskModel = document.getElementsByClassName("list-item-model");
 let inputTask = document.getElementById("inputTask");
 let inputDescription = document.getElementById("inputDescription");
 
 function addItem(task, description) {
-  let newTask = taskModel.cloneNode(true);
+  let newTask = taskModel[0].cloneNode(true);
   newTask.querySelector(".item-author").textContent = task;
   newTask.querySelector(".item-except").textContent = description;
+  newTask.className = "list-item";
+  newTask.style.display = "block";
   console.log(newTask.querySelector(".btnDeleteTask"));
   newTask.querySelector(".btnDeleteTask").addEventListener("click", (e) => {
-    //console.log("vvv" + task);
     e.target.closest(".list-item").remove();
+    storeDataTasks();
   });
   container.appendChild(newTask);
   //-----------
 }
 
 function storeDataTasks() {
-  let taskElements = Array.from(document.getElementsByClassName("flex"));
+  let taskElements = Array.from(document.getElementsByClassName("list-item"));
+  console.log("0000000000");
+  console.log(taskElements);
   tasks = taskElements.map((taskElement) => {
     let task = taskElement.getElementsByClassName("item-author")[0];
     let description = taskElement.getElementsByClassName("item-except")[0];
