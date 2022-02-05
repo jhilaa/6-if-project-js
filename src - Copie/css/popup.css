@@ -149,8 +149,3 @@ list-item {
 .list-item-model {
   display: none;
 }
-
-::placeholder {
-  color: lightgray;
-  font-style: italic;
-}
