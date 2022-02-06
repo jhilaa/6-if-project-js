@@ -155,7 +155,7 @@ list-item {
   font-style: italic;
 }
 
-.item-except:hover,
-.item-author:hover {
+.item-detail:hover,
+.item-task:hover {
   background-color: rgb(235, 233, 233);
 }

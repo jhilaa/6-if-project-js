@@ -5,8 +5,8 @@ let inputDescription = document.getElementById("inputDescription");
 
 function addItem(task, description) {
   let newTask = taskModel[0].cloneNode(true);
-  newTask.querySelector(".item-author").value = task;
-  newTask.querySelector(".item-except").value = description;
+  newTask.querySelector(".item-task").value = task;
+  newTask.querySelector(".item-detail").value = description;
   newTask.classList.add("list-item");
   newTask.classList.add("list-item-model");
   newTask.style.display = "flex";
@@ -23,21 +23,21 @@ function addItem(task, description) {
     storeDataTasks();
   });
   //-----------------
-  newTask.querySelector(".item-author").addEventListener("input", (e) => {
+  newTask.querySelector(".item-task").addEventListener("input", (e) => {
     let cardRoot = e.target.closest(".card");
     let btnCheck = cardRoot.querySelector(".btnCheck");
     btnCheck.classList.remove("d-none");
   });
   //-----------------
-  newTask.querySelector(".item-except").addEventListener("input", (e) => {
+  newTask.querySelector(".item-detail").addEventListener("input", (e) => {
     let cardRoot = e.target.closest(".card");
     let btnCheck = cardRoot.querySelector(".btnCheck");
     btnCheck.classList.remove("d-none");
   }),
     //------------------
     sortable.appendChild(newTask);
-  if (newTask.querySelector(".item-author") == "") {
-    newTask.querySelector(".item-author").focus();
+  if (newTask.querySelector(".item-task") == "") {
+    newTask.querySelector(".item-task").focus();
   }
 }
 
@@ -52,8 +52,8 @@ function storeDataTasks() {
   // hideAllEditButtons();
   let taskElements = Array.from(document.getElementsByClassName("list-item"));
   tasks = taskElements.map((taskElement) => {
-    let task = taskElement.getElementsByClassName("item-author")[0];
-    let description = taskElement.getElementsByClassName("item-except")[0];
+    let task = taskElement.getElementsByClassName("item-task")[0];
+    let description = taskElement.getElementsByClassName("item-detail")[0];
     return {
       "task": task.value,
       "description": description.value,
