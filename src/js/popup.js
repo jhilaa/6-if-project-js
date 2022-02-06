@@ -27,16 +27,18 @@ function addItem(task, description) {
     let cardRoot = e.target.closest(".card");
     let btnCheck = cardRoot.querySelector(".btnCheck");
     btnCheck.classList.remove("d-none");
+  });
+  //-----------------
+  newTask.querySelector(".item-except").addEventListener("input", (e) => {
+    let cardRoot = e.target.closest(".card");
+    let btnCheck = cardRoot.querySelector(".btnCheck");
+    btnCheck.classList.remove("d-none");
   }),
-    //-----------------
-    newTask.querySelector(".item-except").addEventListener("input", (e) => {
-      let cardRoot = e.target.closest(".card");
-      let btnCheck = cardRoot.querySelector(".btnCheck");
-      btnCheck.style.display = "flex";
-      btnCheck.classList.remove("d-none");
-    }),
     //------------------
     sortable.appendChild(newTask);
+  if (newTask.querySelector(".item-author") == "") {
+    newTask.querySelector(".item-author").focus();
+  }
 }
 
 function hideAllEditButtons() {
@@ -57,7 +59,6 @@ function storeDataTasks() {
       "description": description.value,
     };
   });
-  console.log(tasks);
   chrome.storage.sync.set(
     {
       tasks,

@@ -154,3 +154,8 @@ list-item {
   color: lightgray;
   font-style: italic;
 }
+
+.item-except:hover,
+.item-author:hover {
+  background-color: rgb(235, 233, 233);
+}
