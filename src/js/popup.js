@@ -8,7 +8,7 @@ function addItem(task, description) {
   newTask.querySelector(".item-task").value = task;
   newTask.querySelector(".item-detail").value = description;
   newTask.classList.add("list-item");
-  newTask.classList.add("list-item-model");
+  newTask.classList.remove("list-item-model");
   newTask.style.display = "flex";
   //----------------
   newTask.querySelector(".btnDeleteTask").addEventListener("click", (e) => {

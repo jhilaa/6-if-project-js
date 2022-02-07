@@ -129,7 +129,7 @@ body {
 }
 
 .list-row .list-item > * {
-  padding-left: 0.625rem;
+  padding-left: 0.925rem;
   padding-right: 0.625rem;
 }
 
@@ -146,6 +146,10 @@ list-item {
   background: white;
 }
 
+.list-item:hover {
+  cursor: grab;
+}
+
 .list-item-model {
   display: none;
 }
@@ -158,4 +162,17 @@ list-item {
 .item-detail:hover,
 .item-task:hover {
   background-color: rgb(235, 233, 233);
+}
+
+.grab {
+  border-radius: 50%;
+  background-image: url("../images/icon_draggable.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f9f9fa;
+  left: -1em;
+  border: 1px solid rgba(19, 24, 44, 0.125);
+  width: 2em;
+  height: 2em;
+  position: absolute;
 }
