@@ -1,5 +1,4 @@
 # TO-DUM
-
 The most simple todo list you need as a Chrome extension
 A very simple and efficient todo list. 
 Directly in your browser where you spend the most of your days, so don't lose time using another application.
