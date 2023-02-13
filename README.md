@@ -1,3 +1,5 @@
+![forthebadge](https://img.shields.io/badge/chrome-f542e6)  ![forthebadge](https://img.shields.io/badge/work--efficiency-49cade)  
+
 # TO-DUM
 The most simple todo list you need as a Chrome extension
 A very simple and efficient todo list. 
